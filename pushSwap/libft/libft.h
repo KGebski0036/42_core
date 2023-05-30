@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:54:25 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 13:37:02 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/30 16:19:44 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }t_list;
 
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstadd_front(t_list **lst, t_list *new);
-void			ft_lstclear(t_list **lst, void (*del)(void*));
-void			ft_lstdelone(t_list *lst, void (*del)(void*));
-void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstlast(t_list *lst);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
-t_list			*ft_lstnew(void *content);
+t_list			*ft_lstnew(int content);
 int				ft_lstsize(t_list *lst);
+
 long			ft_atoi(const char *nptr);
 void			*ft_bzero(void *s, unsigned int n);
 void			*ft_calloc(unsigned int nmemb, unsigned int size);
