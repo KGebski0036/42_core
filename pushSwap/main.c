@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: cjackows <cjackows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:47:02 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 13:28:39 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/30 16:35:01 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
-#include "libft/libft.h"
+#include "push_swap.h"
+#include "libft.h"
 
 int	main(int argc, char *argv[])
 {

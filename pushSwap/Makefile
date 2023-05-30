@@ -34,7 +34,7 @@ all: libft ascii-art $(NAME)
 $(NAME): $(OBJ)
 	@echo
 	@echo "$(COMPILATION)$(NAME) compilation with $(OS)-flags.$(RESET)"
-	$(CC) $(CFLAGS) $(LIBS) $(OBJ) -o $(NAME) $(LIBFT)
+	@$(CC) $(CFLAGS) $(LIBS) $(HDRS) $(OBJ) -o $(NAME) $(LIBFT)
 	@echo "$(INFO)$@ executable has been created$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: cjackows <cjackows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:53:48 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 13:33:39 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/30 16:34:20 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
-#include "../inc/push_swap.h"
-#include "../libft/libft.h"
+#include "push_swap.h"
+#include "libft.h"
 
 int	isnumber(char *s)
 {
