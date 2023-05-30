@@ -1,0 +1,3 @@
+[submodule "pushSwap/inc/42-libft"]
+	path = pushSwap/inc/42-libft
+	url = https://github.com/cj4ck/42-libft.git
