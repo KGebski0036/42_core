@@ -50,7 +50,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 
 libft:
-	@make  --quiet -C  $(LIBFT_DIR)
+	@make bonus --quiet -C  $(LIBFT_DIR)
 	@clear
 
 clean:
