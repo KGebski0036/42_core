@@ -16,9 +16,9 @@ TOTAL_PROGRESS = $(words $(OBJ))
 
 NAME		=	push_swap
 CC			=	cc
-CFLAGS		=	
+CFLAGS		=	-Wall -Wextra -Werror
 #-fsanitize=address
-#-Wall -Wextra -Werror 
+ 
 LIBFT		=	./inc/libft/libft.a
 LIBFT_DIR	=	./inc/libft/
 HDRS_DIR	=	./inc/

@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:54:25 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:05:11 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:23:26 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, unsigned int len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-
+int				get_number_of_words(char const *s, char c);
 #endif

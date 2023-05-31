@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:47:38 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/24 10:39:11 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 16:23:09 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	get_lentht_of_part(char const *s, char c)
 	return (i);
 }
 
-static int	get_number_of_words(char const *s, char c)
+int	get_number_of_words(char const *s, char c)
 {
 	int	i;
 

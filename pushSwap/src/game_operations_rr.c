@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:43:26 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:26:56 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 18:18:33 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 void	rra(t_list **A)
 {
 	move_last_node_to_top(A);
-	ft_putstr_fd("RRA\n", 1);
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_list **B)
 {
 	move_last_node_to_top(B);
-	ft_putstr_fd("RRB\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_list **A, t_list **B)
 {
 	move_last_node_to_top(B);
 	move_last_node_to_top(A);
-	ft_putstr_fd("RRR\n", 1);
+	ft_putstr_fd("rrr\n", 1);
 }

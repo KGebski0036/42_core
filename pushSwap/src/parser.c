@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:53:48 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 13:33:39 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 18:10:16 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,44 @@ int	*parser(int argc, char **argv)
 	int		*result;
 	long	number;
 	int		i;
+	int		j;
+	char	**input;
 
-	result = (int *)malloc(sizeof(int) * (argc - 1));
-	if (!result)
-		return (0);
-	i = 1;
-	while (i < argc)
+	i = 0;
+	j = 0;
+	if (argc == 2)
 	{
-		if (!isnumber(argv[i]))
+		result = (int *)malloc(sizeof(int) * get_number_of_words(argv[1], ' ') + 1);
+		if (!result)
+			return (0);
+		input = ft_split(argv[1], ' ');
+	}
+	else
+	{
+		result = (int *)malloc(sizeof(int) * (argc - 1));
+		if (!result)
+			return (0);
+		input = argv;
+		i = 1;
+	}
+	while (input[i])
+	{
+		if (!isnumber(input[i]))
 		{
 			free(result);
 			return (0);
 		}
-		number = ft_atoi(argv[i]);
+		number = ft_atoi(input[i]);
 		if (number > INT_MAX || number < INT_MIN)
 		{
 			free(result);
 			return (0);
 		}
-		result[i - 1] = (int)number;
+		result[j] = (int)number;
+		j++;
 		i++;
 	}
+	if (argc == 2)
+		free(input);
 	return (result);
 }

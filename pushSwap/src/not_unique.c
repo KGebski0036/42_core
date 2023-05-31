@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:26:35 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 13:30:38 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 17:47:07 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	not_unique(int *tab, size_t size)
 		while (j < size)
 		{
 			if (tab[i] == tab[j])
+			{
 				return (1);
+			}
 			j++;
 		}
 		i++;

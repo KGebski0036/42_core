@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:43:26 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 14:48:11 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 18:18:48 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,30 @@
 void	pa(t_list **A, t_list **B)
 {
 	do_push(B, A);
-	ft_putstr_fd("PA\n", 1);
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_list **A, t_list **B)
 {
 	do_push(A, B);
-	ft_putstr_fd("PB\n", 1);
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	sa(t_list **A)
 {
 	swap_stack(A);
-	ft_putstr_fd("SA\n", 1);
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_list **B)
 {
 	swap_stack(B);
-	ft_putstr_fd("SB\n", 1);
+	ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_list **A, t_list **B)
 {
 	swap_stack(A);
 	swap_stack(B);
-	ft_putstr_fd("SS\n", 1);
+	ft_putstr_fd("ss\n", 1);
 }
