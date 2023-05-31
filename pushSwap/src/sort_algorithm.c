@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 12:27:27 by kgebski          ###   ########.fr       */
+/*   Created: 2023/05/31 12:26:43 by kgebski           #+#    #+#             */
+/*   Updated: 2023/05/31 12:28:42 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdlib.h>
-# include "../libft/libft.h"
-# include "stack_operations.h"
+#include "push_swap.h"
 
-# include <stdio.h>
-
-int		*parser(int argc, char *argv[]);
-int		not_unique(int *tab, size_t size);
-void	initialize_list(int *tab, size_t size, t_list **lst);
-void	sort_stack(t_list **stack_a, t_list **stack_b, size_t size);
-
-#endif
+void	sort_stack(t_list **stack_a, t_list **stack_b, size_t size)
+{
+}

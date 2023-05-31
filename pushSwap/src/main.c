@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:47:02 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:37:39 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 12:28:02 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char *argv[])
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	initialize_list(tab_of_numbers, argc - 1, stack_a);
 	print_stacks(*stack_a, *stack_b);
-	sort_stack(*stack_a, *stack_b);
+	sort_stack(stack_a, stack_b, argc - 1);
 	print_stacks(*stack_a, *stack_b);
 	free(tab_of_numbers);
 	return (0);
