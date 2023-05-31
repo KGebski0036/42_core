@@ -23,7 +23,7 @@ static int	get_lentht_of_part(char const *s, char c)
 	return (i);
 }
 
-int	get_number_of_words(char const *s, char c)
+int	ft_get_number_of_words(char const *s, char c)
 {
 	int	i;
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	int		i;
 
-	result = (char **)malloc((get_number_of_words(s, c) + 1) * sizeof(char *));
+	result = (char **)malloc((ft_get_number_of_words(s, c) + 1) * sizeof(char *));
 	if (!result)
 		return (0);
 	i = 0;

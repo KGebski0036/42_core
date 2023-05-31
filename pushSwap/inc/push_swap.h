@@ -13,34 +13,49 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-# include "../libft/libft.h"
-# include "stack_operations.h"
+# include "libft.h"
 
 # include <stdio.h>
 
 int		*parser(int argc, char *argv[]);
 int		not_unique(int *tab, size_t size);
 void	initialize_list(int *tab, size_t size, t_list **lst);
+
+//*     --=[ sorting_algorithm_*.c ]=--
 void	sort_stack(t_list **stack_a, t_list **stack_b);
-
-int		is_sorted(t_list *lst);
-void	sort_three(t_list **stack_a);
-void 	sort_n(t_list **stack_a, t_list **stack_b, size_t n);
-
-int		find_minimum_index(t_list *lst, size_t n);
-int		find_maximum_index(t_list *lst);
-
-int		find_minimum_val(t_list *lst);
-int		find_maximum_val(t_list *lst);
-
 void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts);
 
-//*		--=[ utils.c ]=--
-int		ft_abs(int	num);
+void	sort_three(t_list **stack_a);
+void 	sort_n(t_list **stack_a, t_list **stack_b, size_t n);
+void	sort_n2(t_list **stack_a, t_list **stack_b);
+
+//*     --=[ stack_vars.c ]=--
+int		find_minimum_index(t_list *lst, size_t n);
+int		find_maximum_index(t_list *lst);
+int		find_minimum_val(t_list *lst);
+int		find_maximum_val(t_list *lst);
 
 //*		--=[ index_node.c ]=--
 int	index_first_node(t_list *stack, int range_start, int range_end);
 int	index_last_node(t_list *stack, int range_start, int range_end);
 
-void	sort_n2(t_list **stack_a, t_list **stack_b);
+//*     --=[ stack_operations.c ]=--
+void	do_push(t_list **src, t_list **dst);
+void	swap_stack(t_list **stack);
+void	move_node_to_end(t_list **stack);
+void	move_last_node_to_top(t_list **stack);
+
+//*     --=[ game_operations_*.c ]=--
+void	pa(t_list **A, t_list **B);
+void	pb(t_list **A, t_list **B);
+void	sa(t_list **A);
+void	sb(t_list **A);
+void	ss(t_list **A, t_list **B);
+void	ra(t_list **A);
+void	rb(t_list **B);
+void	rr(t_list **A, t_list **B);
+void	rra(t_list **A);
+void	rrb(t_list **B);
+void	rrr(t_list **A, t_list **B);
+
 #endif

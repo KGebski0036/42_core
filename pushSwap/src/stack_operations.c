@@ -11,12 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stack_operations.h"
-#include "game_operations.h"
 
-/**
- * @brief Push first element from "stack" src to dst. 
- */
 void	do_push(t_list **src, t_list **dst)
 {
 	t_list	*tmp;

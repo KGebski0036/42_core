@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stack_operations.h"
-#include "game_operations.h"
 
 void	pa(t_list **A, t_list **B)
 {

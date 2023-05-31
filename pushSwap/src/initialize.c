@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../inc/push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
 void	initialize_list(int *tab, size_t size, t_list **lst)
 {

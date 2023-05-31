@@ -11,10 +11,9 @@
 /* ************************************************************************** */
 
 #include <limits.h>
-#include "../inc/push_swap.h"
-#include "../libft/libft.h"
+#include "push_swap.h"
 
-int	isnumber(char *s)
+static	int	isnumber(char *s)
 {
 	int	j;
 
@@ -40,7 +39,7 @@ int	*parser(int argc, char **argv)
 	j = 0;
 	if (argc == 2)
 	{
-		result = (int *)malloc(sizeof(int) * get_number_of_words(argv[1], ' ') + 1);
+		result = (int *)malloc(sizeof(int) * ft_get_number_of_words(argv[1], ' ') + 1);
 		if (!result)
 			return (0);
 		input = ft_split(argv[1], ' ');
