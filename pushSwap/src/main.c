@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <cjackows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:47:02 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 19:58:21 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:37:39 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+#include "game_operations.h"
 
 void	print_stacks(t_list *a, t_list *b)
 {
@@ -58,8 +59,8 @@ int	main(int argc, char *argv[])
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	initialize_list(tab_of_numbers, argc - 1, stack_a);
-	// print_stacks(*stack_a, *stack_b);
-    do_push(stack_b, stack_a);
+	print_stacks(*stack_a, *stack_b);
+	sort_stack(*stack_a, *stack_b);
 	print_stacks(*stack_a, *stack_b);
 	free(tab_of_numbers);
 	return (0);

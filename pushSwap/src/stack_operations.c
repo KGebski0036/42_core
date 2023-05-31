@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <cjackows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:43:26 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 19:58:55 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:15:50 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "stack_operations.h"
-
-// void	operation_sa(t_list **stack_a)
-// {
-	
-// }
+#include "game_operations.h"
 
 /**
  * @brief Push first element from "stack" src to dst. 
@@ -43,10 +39,46 @@ void	swap_stack(t_list **stack)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		ft_putstr_fd("Stack is empty or has too little nodes\n", 1);
-		return;
+		return ;
 	}
 	tmp = *stack;
 	*stack = (*stack)->next;
 	tmp->next = (*stack)->next;
 	(*stack)->next = tmp;
+}
+
+void	move_node_to_end(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*last;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		ft_putstr_fd("Stack is empty or has too little nodes\n", 1);
+		return ;
+	}
+	tmp = *stack;
+	last = ft_lstlast(*stack);
+	*stack = (*stack)->next;
+	last->next = tmp;
+	tmp->next = 0;
+}
+
+void	move_last_node_to_top(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*last;
+	t_list	*penultimate;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		ft_putstr_fd("Stack is empty or has too little nodes\n", 1);
+		return ;
+	}
+	tmp = *stack;
+	last = ft_lstlast(*stack);
+	penultimate = ft_lstpenultimate(*stack);
+	*stack = last;
+	last->next = tmp;
+	penultimate->next = 0;
 }

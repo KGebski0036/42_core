@@ -6,7 +6,7 @@
 #    By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/28 15:54:41 by karol             #+#    #+#              #
-#    Updated: 2023/05/30 16:20:57 by kgebski          ###   ########.fr        #
+#    Updated: 2023/05/31 11:04:21 by kgebski          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ft_putchar_fd.c ft_strmapi.c ft_atoi.c ft_putendl_fd.c \
 
 SRCSB	= ft_lstadd_front.c \
 	ft_lstadd_back.c ft_lstsize.c ft_lstnew.c \
-	ft_lstlast.c
+	ft_lstlast.c ft_lstpenultimate.c
 
 OBJS	= $(SRCS:.c=.o)
 OBJSB	= $(SRCSB:.c=.o)

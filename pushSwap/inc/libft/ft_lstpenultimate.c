@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstpenultimate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:37:58 by kgebski          ###   ########.fr       */
+/*   Created: 2023/05/23 14:41:03 by kgebski           #+#    #+#             */
+/*   Updated: 2023/05/31 11:04:56 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdlib.h>
-# include "../libft/libft.h"
-# include "stack_operations.h"
+#include "libft.h"
 
-# include <stdio.h>
+t_list	*ft_lstpenultimate(t_list *lst)
+{
+	t_list	*tmp;
 
-int		*parser(int argc, char *argv[]);
-int		not_unique(int *tab, size_t size);
-void	initialize_list(int *tab, size_t size, t_list **lst);
-void	
-
-#endif
+	if (!lst)
+		return (0);
+	tmp = lst;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	return (tmp);
+}

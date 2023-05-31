@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <cjackows@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:42:25 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 19:26:33 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/05/31 11:00:46 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define STACK_OPERATIONS_H
 # include "push_swap.h"
 
-void	operation_sa(t_list **stack_a);
 void	do_push(t_list **src, t_list **dst);
 void	swap_stack(t_list **stack);
+void	move_node_to_end(t_list **stack);
+void	move_last_node_to_top(t_list **stack);
 
 #endif

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   game_operations.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:37:58 by kgebski          ###   ########.fr       */
+/*   Created: 2023/05/30 17:42:25 by kgebski           #+#    #+#             */
+/*   Updated: 2023/05/31 11:19:47 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdlib.h>
-# include "../libft/libft.h"
-# include "stack_operations.h"
+#ifndef GAME_OPERATIONS_H
+# define GAME_OPERATIONS_H
+# include "push_swap.h"
 
-# include <stdio.h>
+void	pa(t_list **A, t_list **B);
+void	pb(t_list **A, t_list **B);
 
-int		*parser(int argc, char *argv[]);
-int		not_unique(int *tab, size_t size);
-void	initialize_list(int *tab, size_t size, t_list **lst);
-void	
+void	sa(t_list **A);
+void	sb(t_list **A);
+void	ss(t_list **A, t_list **B);
+
+void	ra(t_list **A);
+void	rb(t_list **B);
+void	rr(t_list **A, t_list **B);
+
+void	rra(t_list **A);
+void	rrb(t_list **B);
+void	rrr(t_list **A, t_list **B);
 
 #endif

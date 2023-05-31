@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   game_operations_rr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:37:58 by kgebski          ###   ########.fr       */
+/*   Created: 2023/05/30 17:43:26 by kgebski           #+#    #+#             */
+/*   Updated: 2023/05/31 11:26:56 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdlib.h>
-# include "../libft/libft.h"
-# include "stack_operations.h"
+#include "push_swap.h"
+#include "stack_operations.h"
+#include "game_operations.h"
 
-# include <stdio.h>
+void	rra(t_list **A)
+{
+	move_last_node_to_top(A);
+	ft_putstr_fd("RRA\n", 1);
+}
 
-int		*parser(int argc, char *argv[]);
-int		not_unique(int *tab, size_t size);
-void	initialize_list(int *tab, size_t size, t_list **lst);
-void	
+void	rrb(t_list **B)
+{
+	move_last_node_to_top(B);
+	ft_putstr_fd("RRB\n", 1);
+}
 
-#endif
+void	rrr(t_list **A, t_list **B)
+{
+	move_last_node_to_top(B);
+	move_last_node_to_top(A);
+	ft_putstr_fd("RRR\n", 1);
+}

@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:54:25 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 16:19:44 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 11:05:11 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void			ft_lstadd_front(t_list **lst, t_list *new);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(int content);
 int				ft_lstsize(t_list *lst);
+t_list			*ft_lstpenultimate(t_list *lst);
 
 long			ft_atoi(const char *nptr);
 void			*ft_bzero(void *s, unsigned int n);
