@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 12:55:33 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 14:25:21 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,6 @@ void	sort_stack(t_list **stack_a, t_list **stack_b, size_t size);
 
 int		is_sorted(t_list *lst);
 void	sort_three(t_list **stack_a);
+void 	sort_n(t_list **stack_a, t_list **stack_b, size_t n);
+int		find_minimum(t_list *lst, size_t n);
 #endif

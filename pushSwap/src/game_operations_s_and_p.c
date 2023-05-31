@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:43:26 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 11:30:50 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 14:48:11 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 void	pa(t_list **A, t_list **B)
 {
-	do_push(A, B);
+	do_push(B, A);
 	ft_putstr_fd("PA\n", 1);
 }
 
 void	pb(t_list **A, t_list **B)
 {
-	do_push(B, A);
+	do_push(A, B);
 	ft_putstr_fd("PB\n", 1);
 }
 
