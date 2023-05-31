@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 12:27:27 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 12:55:33 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,6 @@ int		not_unique(int *tab, size_t size);
 void	initialize_list(int *tab, size_t size, t_list **lst);
 void	sort_stack(t_list **stack_a, t_list **stack_b, size_t size);
 
+int		is_sorted(t_list *lst);
+void	sort_three(t_list **stack_a);
 #endif
