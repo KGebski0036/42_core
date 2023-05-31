@@ -66,9 +66,17 @@ fclean: clean
 	@rm -f $(NAME);
 	@printf "$(RED_B)[DELETED]$(RESET) $(RED)$(NAME)$(RESET)\n"; \
 
+fclean_fast:
+	@for obj in $(OBJ); do \
+		rm -f $$obj; \
+		printf "$(RED_B)[DELETED]$(RESET) $(RED)$$obj$(RESET)\n"; \
+	done
+	@rm -f $(NAME);
+	@printf "$(RED_B)[DELETED]$(RESET) $(RED)$(NAME)$(RESET)\n"; \
+
 re: fclean all
 
-sre: clean all
+sre: fclean_fast all
 
 git:
 	@echo "$(BLUE)"

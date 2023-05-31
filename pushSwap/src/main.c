@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:47:02 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 18:17:29 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/05/31 21:17:19 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		ft_putstr_fd("No arguments provided!\n", 1);
 		return (0);
 	}
 	if (argc == 2)
@@ -66,7 +65,7 @@ int	main(int argc, char *argv[])
 	initialize_list(tab_of_numbers, size, stack_a);
 	//print_stacks(*stack_a, *stack_b);
 	if (size > 1)
-		sort_stack(stack_a, stack_b, size);
+		sort_stack(stack_a, stack_b);
 	//print_stacks(*stack_a, *stack_b);
 	free(tab_of_numbers);
 	return (0);
