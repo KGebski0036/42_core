@@ -61,6 +61,6 @@ char			*ft_substr(char const *s, unsigned int start, unsigned int len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_get_number_of_words(char const *s, char c);
-int				ft_abs(int	num)
+int				ft_abs(int	num);
 
 #endif
