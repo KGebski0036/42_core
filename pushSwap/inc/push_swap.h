@@ -17,12 +17,21 @@
 
 # include <stdio.h>
 
+typedef struct s_e
+{
+    t_list	**stack_a;
+	t_list	**stack_b;
+    int     min_val;
+    int     max_val;
+    int     range;
+}	t_env;
+
 int		*parser(int argc, char *argv[]);
 int		not_unique(int *tab, size_t size);
 void	initialize_list(int *tab, size_t size, t_list **lst);
 
 //*     --=[ sorting_algorithm_*.c ]=--
-void	sort_stack(t_list **stack_a, t_list **stack_b);
+void	sort_stack(t_env *env);
 void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts);
 
 void	sort_three(t_list **stack_a);
@@ -36,8 +45,8 @@ int		find_minimum_val(t_list *lst);
 int		find_maximum_val(t_list *lst);
 
 //*		--=[ index_node.c ]=--
-int	index_first_node(t_list *stack, int range_start, int range_end);
-int	index_last_node(t_list *stack, int range_start, int range_end);
+int 	index_first_node(t_list *stack, int range_start, int range_end);
+int	    index_last_node(t_list *stack, int range_start, int range_end);
 
 //*     --=[ stack_operations.c ]=--
 void	do_push(t_list **src, t_list **dst);

@@ -24,16 +24,15 @@ static int	is_sorted(t_list *lst)
 	return (1);
 }
 
-//! TOO MANY LINES
-void	sort_stack(t_list **stack_a, t_list **stack_b)
+static	void set_stack_vars(t_env *env)
 {
-	int	min;
-	int	max;
-
-	min = find_minimum_val(*stack_a);
-	max = find_maximum_val(*stack_a);
-
-	if (is_sorted(*stack_a))
+	env->min_val = find_minimum_val(*stack_a);
+	env->max_val = find_maximum_val(*stack_a);
+}
+//! TOO MANY LINES
+void	sort_stack(t_env *env)
+{
+	if (is_sorted(env->stack_a)))
 		return ;
 
 	if (ft_lstsize(*stack_a) > 50)
@@ -61,7 +60,7 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 //! TOO MANY LINES
 void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts)
 {
-	int	range;
+	// int	range;
 	int first_n;
 	int last_n;
 	int i;

@@ -40,9 +40,8 @@
 int	main(int argc, char *argv[])
 {
 	int		*tab_of_numbers;
-	t_list	**stack_a;
-	t_list	**stack_b;
 	int		size;
+	t_env	*env;
 
 	if (argc == 1)
 		return (0);
@@ -56,11 +55,11 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	stack_a = (t_list **)malloc(sizeof(t_list));
-	stack_b = (t_list **)malloc(sizeof(t_list));
-	initialize_list(tab_of_numbers, size, stack_a);
+	env->stack_a = (t_list **)malloc(sizeof(t_list));
+	env->stack_b = (t_list **)malloc(sizeof(t_list));
+	initialize_list(tab_of_numbers, size, env->stack_a);
 	if (size > 1)
-		sort_stack(stack_a, stack_b);
+		sort_stack(&env);
 	free(tab_of_numbers);
 	return (0);
 }
