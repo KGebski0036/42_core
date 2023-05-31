@@ -59,9 +59,9 @@ int	main(int argc, char *argv[])
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	initialize_list(tab_of_numbers, argc - 1, stack_a);
-	//print_stacks(*stack_a, *stack_b);
+	print_stacks(*stack_a, *stack_b);
 	sort_stack(stack_a, stack_b, argc - 1);
-	//print_stacks(*stack_a, *stack_b);
+	print_stacks(*stack_a, *stack_b);
 	free(tab_of_numbers);
 	return (0);
 }

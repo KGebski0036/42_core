@@ -39,7 +39,7 @@ int	is_sorted(t_list *lst)
 			return (0);
 		lst = lst->next;
 	}
-	//ft_putstr_fd("sorted!!!\n", 1);
+	// ft_putstr_fd("sorted!!!\n", 1);
 	return (1);
 }
 
@@ -56,7 +56,7 @@ void sort_three(t_list **stack_a)
 		&& tmp->next->content > tmp->content)
 	{
 		if (tmp->content > tmp->next->next->content)
-			rra(stack_a);
+			rra(stack_a); 
 		else
 		{
 			sa(stack_a);
