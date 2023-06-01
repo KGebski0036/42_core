@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:09:17 by cjackows          #+#    #+#             */
-/*   Updated: 2023/05/31 19:09:43 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:38:42 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_abs(int	num)
+int	ft_abs(int num)
 {
-	if(num < 0)
+	if (num < 0)
 		num *= -1;
 	return (num);
 }

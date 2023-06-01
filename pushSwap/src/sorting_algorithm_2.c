@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_algorithm.c                                   :+:      :+:    :+:   */
+/*   sorting_algorithm_2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:26:43 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 21:17:01 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:39:40 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	sort_three(t_list **stack_a)
 	t_list	*tmp;
 
 	tmp = *stack_a;
-	if (tmp->next->next->content > tmp->next->content 
+	if (tmp->next->next->content > tmp->next->content
 		&& tmp->next->next->content > tmp->content)
 		sa(stack_a);
-	else if (tmp->next->content > tmp->next->next->content 
+	else if (tmp->next->content > tmp->next->next->content
 		&& tmp->next->content > tmp->content)
 	{
 		if (tmp->content > tmp->next->next->content)
@@ -40,7 +40,7 @@ void	sort_three(t_list **stack_a)
 		ra(stack_a);
 }
 
-void	sort_n(t_list **stack_a, t_list **stack_b, size_t n)
+void	sort_ten(t_list **stack_a, t_list **stack_b, size_t n)
 {
 	size_t	index;
 	size_t	i;
@@ -63,7 +63,7 @@ void	sort_n(t_list **stack_a, t_list **stack_b, size_t n)
 void	sort_n2(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
-	int val;
+	int	val;
 
 	index = find_maximum_index(*stack_b);
 	val = find_maximum_val(*stack_b);

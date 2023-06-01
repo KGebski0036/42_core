@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/06/01 09:31:19 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:53:44 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 # include <stdio.h>
 
+//*     --=[ main.c ]=--
+void	free_stack(t_list	**stack);
+int		check_args(int argc, char *argv[]);
+void	clear(int *tab_of_numbers, t_list **stack_a, t_list	**stack_b);
+
 //*     --=[ sorting_algorithm_*.c ]=--
 int		*parser(int argc, char *argv[]);
 int		not_unique(int *tab, size_t size);
@@ -24,10 +29,11 @@ void	initialize_list(int *tab, size_t size, t_list **lst);
 
 //*     --=[ sorting_algorithm_*.c ]=--
 void	sort_stack(t_list **stack_a, t_list **stack_b);
-void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts);
+void	create_part(t_list **stack_a, t_list **stack_b, int min, int max);
+void	create_parts(t_list **a, t_list **b, int min, int max);
 
 void	sort_three(t_list **stack_a);
-void 	sort_n(t_list **stack_a, t_list **stack_b, size_t n);
+void	sort_ten(t_list **stack_a, t_list **stack_b, size_t n);
 void	sort_n2(t_list **stack_a, t_list **stack_b);
 
 //*     --=[ stack_vars.c ]=--

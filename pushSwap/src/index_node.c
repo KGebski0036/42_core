@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index_node.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 13:56:26 by cjackows          #+#    #+#             */
-/*   Updated: 2023/05/31 20:12:15 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 10:19:54 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ int	index_first_node(t_list *stack, int range_start, int range_end)
 	int	i;
 
 	i = 0;
-	while (stack && (stack->content < range_start 
-		|| stack->content > range_end))
+	while (stack && (stack->content < range_start
+			|| stack->content > range_end))
 	{
 		stack = stack->next;
 		i++;
 	}
 	if (!stack)
-		return(-1);
-	return(i);
+		return (-1);
+	return (i);
 }
 
 int	index_last_node(t_list *stack, int range_start, int range_end)
 {
 	int	i;
-	int last;
+	int	last;
 
 	i = 0;
 	while (stack)

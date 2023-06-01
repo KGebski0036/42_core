@@ -6,7 +6,7 @@
 /*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 14:41:21 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/30 16:21:19 by kgebski          ###   ########.fr       */
+/*   Updated: 2023/06/01 09:45:41 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,7 @@ t_list	*ft_lstnew(int content)
 	result = (t_list *)malloc(sizeof(t_list));
 	if (!result)
 		return (0);
-	if (content == 0)
-	{
-		result->content = 0;
-		result->next = 0;
-	}
-	else
-	{
-		result->content = content;
-		result->next = 0;
-	}
+	result->content = content;
+	result->next = 0;
 	return (result);
 }

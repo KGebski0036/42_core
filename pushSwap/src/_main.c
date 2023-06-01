@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   _main.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
+/*   By: kgebski <kgebski@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:47:02 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 21:17:19 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:54:24 by kgebski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,7 @@ int	main(int argc, char *argv[])
 	t_list	**stack_b;
 	int		size;
 
-	if (argc == 1)
-		return (0);
-	if (argc == 2)
-		size = ft_get_number_of_words(argv[1], ' ');
-	else
-		size = argc - 1;
+	size = check_args(argc, argv);
 	tab_of_numbers = parser(argc, argv);
 	if (tab_of_numbers == 0 || not_unique(tab_of_numbers, size))
 	{
@@ -58,9 +53,43 @@ int	main(int argc, char *argv[])
 	}
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_a = 0;
+	*stack_b = 0;
 	initialize_list(tab_of_numbers, size, stack_a);
 	if (size > 1)
 		sort_stack(stack_a, stack_b);
-	free(tab_of_numbers);
+	clear(tab_of_numbers, stack_a, stack_b);
 	return (0);
+}
+
+void	clear(int *tab_of_numbers, t_list **stack_a, t_list	**stack_b)
+{
+	free(tab_of_numbers);
+	free_stack(stack_a);
+	free_stack(stack_b);
+}
+
+void	free_stack(t_list	**stack)
+{
+	t_list	*tmp;
+	t_list	*node;
+
+	node = *stack;
+	while (node)
+	{
+		tmp = node;
+		node = node->next;
+		free(tmp);
+	}
+	free(stack);
+}
+
+int	check_args(int argc, char *argv[])
+{
+	if (argc == 1)
+		return (0);
+	if (argc == 2)
+		return (number_of_words(argv[1], ' '));
+	else
+		return (argc - 1);
 }
