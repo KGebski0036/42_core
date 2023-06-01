@@ -6,7 +6,7 @@
 /*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:50:52 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 21:11:55 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:31:19 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include <stdio.h>
 
+//*     --=[ sorting_algorithm_*.c ]=--
 int		*parser(int argc, char *argv[]);
 int		not_unique(int *tab, size_t size);
 void	initialize_list(int *tab, size_t size, t_list **lst);
@@ -36,8 +37,8 @@ int		find_minimum_val(t_list *lst);
 int		find_maximum_val(t_list *lst);
 
 //*		--=[ index_node.c ]=--
-int	index_first_node(t_list *stack, int range_start, int range_end);
-int	index_last_node(t_list *stack, int range_start, int range_end);
+int		index_first_node(t_list *stack, int range_start, int range_end);
+int		index_last_node(t_list *stack, int range_start, int range_end);
 
 //*     --=[ stack_operations.c ]=--
 void	do_push(t_list **src, t_list **dst);

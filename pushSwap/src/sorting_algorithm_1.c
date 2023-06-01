@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_algorithm.c                                   :+:      :+:    :+:   */
+/*   sorting_algorithm_1.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjackows <@student.42wolfsburg.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:26:43 by kgebski           #+#    #+#             */
-/*   Updated: 2023/05/31 21:17:01 by cjackows         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:35:51 by cjackows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 
 	if (is_sorted(*stack_a))
 		return ;
-
-	if (ft_lstsize(*stack_a) > 50)
-		create_part(stack_a, stack_b, min, max, 5);
-	else if (ft_lstsize(*stack_a) > 300)
-		create_part(stack_a, stack_b, min, max, 11);
+	if (ft_lstsize(*stack_a) > 300)
+		create_part(stack_a, stack_b, min, max, ft_lstsize(*stack_a) / 50);
+	else if (ft_lstsize(*stack_a) > 50)
+		create_part(stack_a, stack_b, min, max, ft_lstsize(*stack_a) / 10);
 	else
 	{
 		while (!is_sorted(*stack_a) || ft_lstsize(*stack_b) != 0)
@@ -87,6 +86,8 @@ void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts
 					rra(stack_a);
 			}	
 			pb(stack_a, stack_b);
+			if ((*stack_b)->content < ((min + i * range) + (min + (i + 1) * range)) / 2 && ft_lstsize(*stack_b) > 2)
+				rb(stack_b);
 			last_n = index_last_node(*stack_a, min + i * range, min + (i + 1) * range);
 			first_n = index_first_node(*stack_a, min + i * range, min + (i + 1) * range);
 		}
