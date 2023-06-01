@@ -41,6 +41,8 @@ void	create_part(t_list **stack_a, t_list **stack_b, int min, int max, int parts
 					rra(stack_a);
 			}	
 			pb(stack_a, stack_b);
+			if((*stack_b)->content < ((min + i * range) + (min + (i + 1) * range))/2 && ft_lstsize(*stack_b) > 2)
+				rb(stack_b);
 			last_n = index_last_node(*stack_a, min + i * range, min + (i + 1) * range);
 			first_n = index_first_node(*stack_a, min + i * range, min + (i + 1) * range);
 		}
@@ -63,10 +65,10 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 	if (is_sorted(*stack_a))
 		return ;
 
-	if (ft_lstsize(*stack_a) > 50)
-		create_part(stack_a, stack_b, min, max, 5);
-	else if (ft_lstsize(*stack_a) > 300)
-		create_part(stack_a, stack_b, min, max, 11);
+	if (ft_lstsize(*stack_a) > 150)
+		create_part(stack_a, stack_b, min, max, ft_lstsize(*stack_a)/50);
+	else if (ft_lstsize(*stack_a) > 50)
+		create_part(stack_a, stack_b, min, max, ft_lstsize(*stack_a)/10);
 	else
 	{
 		while (!is_sorted(*stack_a) || ft_lstsize(*stack_b) != 0)
@@ -151,10 +153,8 @@ void	sort_n(t_list **stack_a, t_list **stack_b, size_t n)
 void	sort_n2(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
-	int	i;
 	int val;
 
-	i = 0;
 	index = find_maximum_index(*stack_b);
 	val = find_maximum_val(*stack_b);
 	if (index < (ft_lstsize(*stack_b) / 2))

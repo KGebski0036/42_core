@@ -12,7 +12,7 @@
 
 #!/bin/bash
 
-NUM_TESTS=100
+NUM_TESTS=1000
 PUSH_SWAP=../push_swap
 CKER=1
 RET_CKER="is not working"
