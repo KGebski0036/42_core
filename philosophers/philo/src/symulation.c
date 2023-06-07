@@ -20,8 +20,8 @@ void	*philo_rutine(void *data)
 	philo = (t_philosopher *)data;
 	med = philo->mediator;
 	if (philo->id % 2 == 0)
-		usleep(1000);
-	while (med->is_death == 0)
+		usleep(med->time_to_eat * 500);
+	while (med->is_death == 0 && med->philo_couter > 1)
 	{
 		p_eat(philo);
 		p_sleep(philo);
@@ -41,7 +41,9 @@ int	start_symulation(t_mediator *med)
 		if (pthread_create(&med->philos[i].thread, NULL,
 				philo_rutine, &(med->philos[i])))
 			return (0);
+		pthread_mutex_lock(&(med->philos[i].mutex_eat));
 		med->philos[i].last_eat = now();
+		pthread_mutex_unlock(&(med->philos[i].mutex_eat));
 		i++;
 	}
 	return (1);
@@ -59,7 +61,9 @@ void	stop_symulation(t_mediator *med)
 	}
 	i = -1;
 	while (++i < med->philo_couter)
-		pthread_mutex_destroy(&(med->forks[i]));
+	{
+		pthread_mutex_destroy(&(med->philos[i].mutex_eat));
+	}
 	pthread_mutex_destroy(&(med->mutex_print));
 	free(med->forks);
 	free(med->philos);
@@ -72,18 +76,21 @@ void	death_checker(t_mediator *med)
 	int				min_meals;
 
 	philos = med->philos;
+	min_meals = 0;
 	while (!(med->is_death))
 	{
 		i = -1;
 		while (++i < med->philo_couter && !(med->is_death))
 		{
+			pthread_mutex_lock(&(philos[i].mutex_eat));
 			if (now() - philos[i].last_eat > med->time_to_death)
 			{
-				print_action(med, i, "died");
+				print_action(med, i, "\e[31mdied\e[0m");
 				med->is_death = 1;
 			}
 			if (philos[i].meals < min_meals || i == 0)
 				min_meals = philos[i].meals;
+			pthread_mutex_unlock(&(philos[i].mutex_eat));
 		}
 		if (med->notepme != 0 && min_meals >= med->notepme)
 			med->is_death = 1;

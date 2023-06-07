@@ -19,7 +19,11 @@ int	main(int ac, char **av)
 	if (!check_input_init(ac, av, &mediator))
 		return (error_r("Invalid input."));
 	if (!init_philo_forks(&mediator))
-		return (error_r("Invalid input."));
+	{
+		free(mediator.forks);
+		free(mediator.philos);
+		return (error_r("Failed to create symulation"));
+	}
 	start_symulation(&mediator);
 	death_checker(&mediator);
 	stop_symulation(&mediator);

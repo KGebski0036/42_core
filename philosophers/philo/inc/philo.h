@@ -25,6 +25,7 @@ typedef struct s_philosopher
 	int					right_fork;
 	long long			last_eat;
 	int					meals;
+	pthread_mutex_t		mutex_eat;
 	struct s_mediator	*mediator;
 	pthread_t			thread;
 }	t_philosopher;
@@ -37,7 +38,6 @@ typedef struct s_mediator
 	int				time_to_sleep;
 
 	int				notepme;
-	int				curent_eat;
 
 	int				is_death;
 
