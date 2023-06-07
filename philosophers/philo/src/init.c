@@ -24,7 +24,6 @@ int	check_input_init(int ac, char **av, t_mediator *med)
 		med->notepme = ft_atoi(av[5]);
 	else
 		med->notepme = 0;
-	med->curent_eat = 0;
 	med->is_death = 0;
 	if (med->philo_couter < 1 || med->time_to_death < 0 || med->time_to_eat < 0
 		|| med->time_to_sleep < 0)
@@ -53,6 +52,8 @@ int	init_philo_forks(t_mediator *med)
 		med->philos[i].last_eat = 0;
 		med->philos[i].meals = 0;
 		med->philos[i].mediator = med;
+		if(pthread_mutex_init(&(med->philos[i].mutex_eat), NULL))
+			return (0);
 		i++;
 	}
 	if (pthread_mutex_init(&(med->mutex_print), NULL))

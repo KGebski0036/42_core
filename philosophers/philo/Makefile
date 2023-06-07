@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME        = philo
-CFLAGS      =  -pthread -Wall -Wextra -Werror -O3
+CFLAGS      =  -pthread -Wall -Wextra -Werror -O3 -g
 HDRS_DIR    = ./inc/
 SRC_DIR     = ./src
 

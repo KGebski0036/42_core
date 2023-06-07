@@ -44,8 +44,8 @@ void	print_action(t_mediator *med, int id, char *string)
 	pthread_mutex_lock(&(med->mutex_print));
 	if (!(med->is_death))
 	{
-		printf("%lli ", now() - med->start_time);
-		printf("%i ", id + 1);
+		printf("\e[33m%lli \e[0m", now() - med->start_time);
+		printf("\e[36m%i \e[0m", id + 1);
 		printf("%s\n", string);
 	}
 	pthread_mutex_unlock(&(med->mutex_print));
