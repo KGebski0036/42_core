@@ -62,6 +62,7 @@ void	stop_symulation(t_mediator *med)
 	i = -1;
 	while (++i < med->philo_couter)
 	{
+		pthread_mutex_destroy(&(med->forks[i]));
 		pthread_mutex_destroy(&(med->philos[i].mutex_eat));
 	}
 	pthread_mutex_destroy(&(med->mutex_print));

@@ -35,7 +35,7 @@ void	sleep_with_check(long long time, t_mediator *med)
 	{
 		if ((now() - i) >= time)
 			break ;
-		usleep(50);
+		usleep(100);
 	}
 }
 
